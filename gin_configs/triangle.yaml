@@ -1,0 +1,45 @@
+# PatchTSTv2.yaml
+_base_: "base.yaml"
+
+# basic config
+task_name: long_term_forecast
+is_training: 1
+model_id: weather_dataset
+model: MiMe_base
+
+# data loader
+data: custom
+root_path: ./dataset
+data_path: weather.csv
+features: M
+target: value
+freq: t
+
+# forecasting task
+seq_len: 720
+label_len: 0
+pred_len: 360
+
+# model define
+e_layers: 2
+d_layers: 1
+factor: 3
+enc_in: 21
+dec_in: 21
+c_out: 21
+des: Exp
+itr: 1
+n_heads: 4
+
+# optimization
+train_epochs: 3
+batch_size: 96
+
+# TimeXer / patch transformer
+patch_len: 16
+train_len: 7
+vali_len: 2
+test_len: 1
+mask_flag: 1
+attn_mask: TriangularCausalMask
+
