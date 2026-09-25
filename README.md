@@ -22,7 +22,7 @@ Run the training script to start the model training process:
 
 `bash online.sh`
 
-This command runs our model and all baselines from the paper on every public dataset included in the study, with forecast lengths set to 180, 360, and 720 steps.
+This command runs our model and all baselines from the paper on every public dataset included in the study, with forecast lengths set to 12 and 24 steps.
 
 The MSE and MAE results are saved in *result_long_term_forecast.txt* , the detailed information is saved in *result_mse_mae.csv*, models are saved in *checkpoints/*. If you want the prediction results with specific numerical values and visualizations, please uncomment the saving codes in *exp_long_term_forecasting.py* and *exp_MiMe_forecasting.py*.
 

@@ -384,8 +384,9 @@ class OGD(assembly_base):
         step_sizes: list or callable, η_t
         projection_fn: function implementing Π_K
         """
-        self.x = torch.distributions.Dirichlet(torch.ones(model_num, device=device)).sample(
-            (num_features,))  # (num_features, model_num)
+        # self.x = torch.distributions.Dirichlet(torch.ones(model_num, device=device)).sample(
+        #     (num_features,))  # (num_features, model_num)
+        self.x = torch.ones(num_features, model_num, device=device) / model_num
         self.projection_fn = self._projection
         self.device = device
         self.eta_factor = eta_factor
